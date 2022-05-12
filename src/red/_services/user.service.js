@@ -32,7 +32,7 @@ function _delete(id) {
     headers: {},
   };
 
-  return fetch(`/users/${id}`, requestOptions).then(handleResponse);
+  return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
