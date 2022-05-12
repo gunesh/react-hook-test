@@ -1,6 +1,4 @@
 import React, { useEffect, memo } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
 function HomePage(props) {
   const { users } = props;
