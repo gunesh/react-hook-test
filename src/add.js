@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from 'react';
 
-function HomePage(props) {
+function Add(props) {
   const data = {
     id: 1,
     name: 'Leanne Graham',
@@ -38,4 +38,4 @@ function HomePage(props) {
   );
 }
 
-export default memo(HomePage);
+export default memo(Add);

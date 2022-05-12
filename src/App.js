@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import HomePage from './List';
+import Add from './add';
 import { userActions } from './red/_actions';
 
 export default function App() {
@@ -21,6 +22,8 @@ export default function App() {
 
   return (
     <div>
+      <Add /> <br />
+      <br />
       <HomePage
         handleReload={handleReload}
         handleDeleteUser={handleDeleteUser}
