@@ -25,6 +25,7 @@ export default function App() {
       <HomePage
         handleReload={handleReload}
         handleDeleteUser={handleDeleteUser}
+        users={users}
       />
     </div>
   );
