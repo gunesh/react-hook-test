@@ -20,34 +20,35 @@ function HomePage() {
   return (
     <div className="col-lg-8 offset-lg-2">
       {!users.items && 'Loading....'}
-      {users.items && (
-        <ul>
-          {users.items.map((user, index) => (
-            <li key={user.id}>
-              {user.name + ' ' + user.name}
-              {user.deleting ? (
-                <em> - Deleting...</em>
-              ) : user.deleteError ? (
-                <span className="text-danger">
-                  {' '}
-                  - ERROR: {user.deleteError}
-                </span>
-              ) : (
-                <span>
-                  {' '}
-                  -{' '}
-                  <a
-                    onClick={() => handleDeleteUser(user.id)}
-                    className="text-primary"
-                  >
-                    Delete
-                  </a>
-                </span>
-              )}
-            </li>
+
+      <table border="1" width="100%">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+        {!users.items && (
+          <tr>
+            <td colSpan="3">Loading........</td>
+          </tr>
+        )}
+        {users.items &&
+          users.items.map((user, index) => (
+            <tr key={user.id}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>
+                {' '}
+                <a
+                  onClick={() => handleDeleteUser(user.id)}
+                  className="text-primary"
+                >
+                  Delete
+                </a>
+              </td>
+            </tr>
           ))}
-        </ul>
-      )}
+      </table>
     </div>
   );
 }
