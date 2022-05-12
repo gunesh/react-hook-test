@@ -19,6 +19,7 @@ function HomePage() {
 
   return (
     <div className="col-lg-8 offset-lg-2">
+      {!users.items && 'Loading....'}
       {users.items && (
         <ul>
           {users.items.map((user, index) => (

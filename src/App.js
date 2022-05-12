@@ -1,6 +1,5 @@
 import React from "react";
 import { HomePage } from './HomePage';
-import "./style.css";
 
 export default function App() {
   return (
