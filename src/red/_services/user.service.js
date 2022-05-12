@@ -40,16 +40,15 @@ function _delete(id) {
 }
 
 function save(data) {
-  // const requestOptions = {
-  //   method: 'DELETE',
-  //   headers: {},
-  // };
+  const requestOptions = {
+    method: 'POST',
+    headers: {},
+  };
 
-  // return fetch(
-  //   `https://jsonplaceholder.typicode.com/posts/${id}`,
-  //   requestOptions
-  // ).then(handleResponse);
-  return data;
+  return fetch(
+    `https://jsonplaceholder.typicode.com/posts`,
+    requestOptions
+  ).then(handleResponse);
 }
 
 function handleResponse(response) {
