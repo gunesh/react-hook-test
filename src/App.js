@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import HomePage from './List';
+import HomePage from './list';
 import Add from './add';
 import { userActions } from './red/_actions';
 
