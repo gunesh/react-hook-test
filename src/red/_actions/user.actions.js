@@ -4,6 +4,7 @@ import { userService } from '../_services';
 export const userActions = {
   getAll,
   delete: _delete,
+  save,
 };
 
 function getAll() {
@@ -44,5 +45,26 @@ function _delete(id) {
   }
   function failure(id, error) {
     return { type: userConstants.DELETE_FAILURE, id, error };
+  }
+}
+
+function save(data) {
+  return (dispatch) => {
+    dispatch(request(data));
+
+    userService.save(data).then(
+      (user) => dispatch(success(data)),
+      (error) => dispatch(failure(data, error.toString()))
+    );
+  };
+
+  function request(id) {
+    return { type: userConstants.ADD_REQUEST, data };
+  }
+  function success(id) {
+    return { type: userConstants.ADD_SUCCESS, data };
+  }
+  function failure(id, error) {
+    return { type: userConstants.ADD_FAILURE, data, error };
   }
 }

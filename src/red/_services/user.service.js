@@ -2,6 +2,7 @@ export const userService = {
   getAll,
   getById,
   delete: _delete,
+  save
 };
 
 function getAll() {
@@ -37,6 +38,20 @@ function _delete(id) {
     requestOptions
   ).then(handleResponse);
 }
+
+function save(data) {
+  // const requestOptions = {
+  //   method: 'DELETE',
+  //   headers: {},
+  // };
+
+  // return fetch(
+  //   `https://jsonplaceholder.typicode.com/posts/${id}`,
+  //   requestOptions
+  // ).then(handleResponse);
+  return data
+}
+
 
 function handleResponse(response) {
   return response.text().then((text) => {
