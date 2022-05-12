@@ -38,7 +38,9 @@ function HomePage(props) {
                   {' '}
                   <a
                     onClick={() => {
-                      props.handleDeleteUser(user.id);
+                      if (confirm('Confirm want to delete!')) {
+                        props.handleDeleteUser(user.id);
+                      }
                     }}
                     className="text-primary"
                   >

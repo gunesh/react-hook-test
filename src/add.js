@@ -1,8 +1,9 @@
 import React, { useEffect, memo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function Add(props) {
   const data = {
-    id: 1,
+    id: uuidv4(),
     name: 'Leanne Graham',
     username: 'Bret',
     email: 'Sincere@april.biz',
