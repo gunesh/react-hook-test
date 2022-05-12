@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from './red/_actions';
 
-function HomePage() {
+function HomePage(props) {
   const users = useSelector((state) => state.users);
 
   const dispatch = useDispatch();
@@ -13,13 +13,16 @@ function HomePage() {
     dispatch(userActions.getAll());
   }, []);
 
-  function handleDeleteUser(id) {
-    dispatch(userActions.delete(id));
-  }
-
   return (
     <div className="col-lg-8 offset-lg-2">
-      {!users.items && 'Loading....'}
+      <button
+        onClick={() => {
+          props.handleReload();
+        }}
+      >
+        {' '}
+        Reload
+      </button>
 
       <table border="1" width="100%">
         <tr>
@@ -42,7 +45,9 @@ function HomePage() {
               <td>
                 {' '}
                 <a
-                  onClick={() => handleDeleteUser(user.id)}
+                  onClick={() => {
+                    props.handleDeleteUser(user.id);
+                  }}
                   className="text-primary"
                 >
                   Delete
