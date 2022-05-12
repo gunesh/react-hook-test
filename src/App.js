@@ -5,7 +5,6 @@ import { userActions } from './red/_actions';
 
 export default function App() {
   const users = useSelector((state) => state.users);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

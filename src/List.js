@@ -2,17 +2,8 @@ import React, { useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-// import { userActions } from './red/_actions';
-
 function HomePage(props) {
-  // const users = useSelector((state) => state.users);
-
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(userActions.getAll());
-  // }, []);
-const {users} = props;
+  const { users } = props;
   return (
     <div className="col-lg-8 offset-lg-2">
       <button
