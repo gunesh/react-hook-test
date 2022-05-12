@@ -14,36 +14,40 @@ function HomePage(props) {
       </button>
 
       <table border="1" width="100%">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Action</th>
-        </tr>
-        {!users.items && (
+        <thead>
           <tr>
-            <td colSpan="3">Loading........</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
           </tr>
-        )}
-        {users.items &&
-          users.items.map((user, index) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>
-                {' '}
-                <a
-                  onClick={() => {
-                    props.handleDeleteUser(user.id);
-                  }}
-                  className="text-primary"
-                >
-                  Delete
-                </a>
-              </td>
+        </thead>
+        <tbody>
+          {!users.items && (
+            <tr>
+              <td colSpan="3">Loading........</td>
             </tr>
-          ))}
+          )}
+          {users.items &&
+            users.items.map((user, index) => (
+              <tr key={`ele-${user.id}-${index}`}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>
+                  {' '}
+                  <a
+                    onClick={() => {
+                      props.handleDeleteUser(user.id);
+                    }}
+                    className="text-primary"
+                  >
+                    Delete
+                  </a>
+                </td>
+              </tr>
+            ))}
+        </tbody>
       </table>
     </div>
   );
