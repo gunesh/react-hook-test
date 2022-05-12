@@ -23,6 +23,7 @@ function HomePage() {
 
       <table border="1" width="100%">
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Email</th>
           <th>Action</th>
@@ -35,6 +36,7 @@ function HomePage() {
         {users.items &&
           users.items.map((user, index) => (
             <tr key={user.id}>
+              <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
