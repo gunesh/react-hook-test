@@ -26,7 +26,6 @@ function getAll() {
   }
 }
 
-// prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
   return (dispatch) => {
     dispatch(request(id));
