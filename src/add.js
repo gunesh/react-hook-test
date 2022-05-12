@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 function Add(props) {
