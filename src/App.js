@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import HomePage from './list';
 import Add from './add';
-import { WithMemoTest, WithoutMemoTest } from './Examples/memoexample';
+import { MemoizeApp, WithoutMemoTest } from './Examples/memoexample';
 import { userActions } from './red/_actions';
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
     <div>
       <Add handleAdd={handleAdd} /> <br />
       <br />
-      <WithMemoTest count={count} /> <br />
+      <MemoizeApp count={count} /> <br />
       <WithoutMemoTest count={count} /> <br />
       <HomePage
         handleReload={handleReload}
