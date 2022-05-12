@@ -11,7 +11,7 @@ function HomePage(props) {
       >
         {' '}
         Reload
-      </button>
+      </button> <br /><br />
 
       <table border="1" width="100%">
         <thead>
