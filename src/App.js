@@ -20,9 +20,13 @@ export default function App() {
     dispatch(userActions.delete(id));
   }
 
+  function handleAdd(data) {
+    dispatch(userActions.save(data));
+  }
+
   return (
     <div>
-      <Add /> <br />
+      <Add handleAdd={handleAdd} /> <br />
       <br />
       <HomePage
         handleReload={handleReload}
